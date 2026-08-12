@@ -1,12 +1,14 @@
 <?php
 session_start();
 
+require __DIR__.'/../vendor/autoload.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
-require 'librerias/PHPMailer/src/Exception.php';
-require 'librerias/PHPMailer/src/PHPMailer.php';
-require 'librerias/PHPMailer/src/SMTP.php'; 
+// require 'librerias/PHPMailer/src/Exception.php';
+// require 'librerias/PHPMailer/src/PHPMailer.php';
+// require 'librerias/PHPMailer/src/SMTP.php'; 
 
 function conexion($host, $bd, $user, $password)
 {
@@ -442,7 +444,7 @@ function enviarCorreo($datos){
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username   = 'example@email.com';           //SMTP username
-            $mail->Password   = '****************';                     //SMTP password
+            $mail->Password   = 'secret';                     //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; //Si se usa gmail    //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
